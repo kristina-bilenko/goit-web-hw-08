@@ -1,7 +1,8 @@
 import json
-from connect import connect
 from models import Authors, Quotes
 
+Authors.drop_collection()
+Quotes.drop_collection()
 
 with open("authors.json", "r", encoding="utf-8") as file:
     authors = json.load(file)
@@ -14,7 +15,7 @@ for author in authors:
         description=author["description"]
     ).save()
 
-with open("quotes.json", "r", encoding="utf-8") as file:
+with open("quоtes.json", "r", encoding="utf-8") as file:
     quotes = json.load(file)
 
 for quot in quotes:
